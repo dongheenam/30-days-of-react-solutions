@@ -80,7 +80,7 @@ export default function Day6Level2() {
     ...countries.map((country) => country.population)
   );
   return (
-    <main className="pb-16">
+    <main>
       <h1>Day 6: Level 2</h1>
       <h2>Number Generator</h2>
       <div

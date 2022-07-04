@@ -63,6 +63,7 @@ code {
 /* common elements */
 main {
   width: min(95%, 800px);
+  padding-bottom: 4rem;
 }
 
 .mont {
