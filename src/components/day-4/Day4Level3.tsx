@@ -28,6 +28,7 @@ export function randomColor(): Color {
 function renderColors(colors: Array<Color>) {
   return colors.map((color) => (
     <div
+      key={color.value}
       className="text-center text-lg mont py-4 rounded-lg"
       style={{
         backgroundColor: color.value,

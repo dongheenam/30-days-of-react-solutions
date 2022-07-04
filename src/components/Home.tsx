@@ -21,6 +21,7 @@ export default function Home() {
         <Button onClick={() => navigate("/day3-3")}>Day 3 #3</Button>
         <Button onClick={() => navigate("/day4-3")}>Day 4 #3</Button>
         <Button onClick={() => navigate("/day6-2")}>Day 6 #2</Button>
+        <Button onClick={() => navigate("/day8-2")}>Day 8 #2</Button>
       </div>
     </main>
   );

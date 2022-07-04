@@ -5,6 +5,7 @@ import Day3Level2 from "./day-3/Day3Level2.js";
 import Day3Level3 from "./day-3/Day3Level3.js";
 import Day4Level3 from "./day-4/Day4Level3.js";
 import Day6Level2 from "./day-6/Day6Level2.js";
+import Day8Level2 from "./day-8/Day8Level2.js";
 
 export default function RouteSolutions() {
   return (
@@ -14,6 +15,7 @@ export default function RouteSolutions() {
       <Route path="/day3-3" element={<Day3Level3 />} />
       <Route path="/day4-3" element={<Day4Level3 />} />
       <Route path="/day6-2" element={<Day6Level2 />} />
+      <Route path="/day8-2" element={<Day8Level2 />} />
       <Route path="*" element={<Home />} />
     </Routes>
   );

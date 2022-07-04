@@ -81,7 +81,7 @@ export default function Day6Level2() {
   );
   return (
     <main className="pb-16">
-      <h1>Day 6 Level 2</h1>
+      <h1>Day 6: Level 2</h1>
       <h2>Number Generator</h2>
       <div
         id="part-1"
