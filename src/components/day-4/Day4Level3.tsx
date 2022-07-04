@@ -3,11 +3,11 @@ import { useState } from "react";
 import Button from "../Button";
 
 /* returns a random hex color as string e.g. #3a12d8 */
-interface Color {
+export interface Color {
   value: string;
   whiteText: boolean;
 }
-function randomColor(): Color {
+export function randomColor(): Color {
   const colorValues: Array<number> = Array.from({ length: 3 }, () =>
     Math.floor(Math.random() * 256)
   );
