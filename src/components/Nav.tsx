@@ -13,7 +13,9 @@ export default function Nav() {
           <Link to="/">Home</Link>
         </li>
         <li className="hover:text-slate-300">
-          <a href="https://github.com/dongheenam">GitHub</a>
+          <a target="_blank" href="https://github.com/dongheenam">
+            GitHub
+          </a>
         </li>
       </ul>
     </nav>

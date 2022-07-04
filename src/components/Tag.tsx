@@ -1,5 +1,5 @@
 interface TagProps {
-  children: String;
+  children: string | React.ReactNode;
 }
 export default function Tag(props: TagProps) {
   return (
