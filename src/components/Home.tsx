@@ -15,13 +15,19 @@ export default function Home() {
         </a>
         !
       </p>
-      <h2>List of Solutions</h2>
+      <h2>Interesting apps</h2>
+      <Button onClick={() => navigate("/day9-3#random-maths-question")}>
+        Random maths questions
+      </Button>
+      <h2>Full list of Solutions</h2>
       <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2 sm:gap-4">
         <Button onClick={() => navigate("/day3-2")}>Day 3 #2</Button>
         <Button onClick={() => navigate("/day3-3")}>Day 3 #3</Button>
         <Button onClick={() => navigate("/day4-3")}>Day 4 #3</Button>
         <Button onClick={() => navigate("/day6-2")}>Day 6 #2</Button>
         <Button onClick={() => navigate("/day8-2")}>Day 8 #2</Button>
+        <Button onClick={() => navigate("/day9-2")}>Day 9 #2</Button>
+        <Button onClick={() => navigate("/day9-3")}>Day 9 #3</Button>
       </div>
     </main>
   );

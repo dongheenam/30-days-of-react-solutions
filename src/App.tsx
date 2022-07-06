@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 
-import useDarkMode from "./components/useDarkMode.js";
+import useDarkMode from "./components/hooks/useDarkMode.js";
 import Nav from "./components/Nav.js";
 import RouteSolutions from "./components/RouteSolutions.js";
 

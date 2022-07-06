@@ -80,7 +80,8 @@ export default function Day6Level2() {
       <h2>Number Generator</h2>
       <div
         id="part-1"
-        className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-0.5 justify-items-stretch"
+        className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8
+          gap-0.5 justify-items-stretch"
       >
         {numbers.map((num) => (
           <div
@@ -95,7 +96,8 @@ export default function Day6Level2() {
       <h2>Hexadecimal Colors</h2>
       <div
         id="part-2"
-        className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-0.5 justify-items-stretch"
+        className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8
+          gap-0.5 justify-items-stretch"
       >
         {colors.map((color) => (
           <div
