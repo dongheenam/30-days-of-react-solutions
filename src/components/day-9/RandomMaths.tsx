@@ -25,7 +25,7 @@ export default function RandomMaths() {
       .then((response) => response.json())
       .then((result) => {
         setProblem(result as Problem);
-        setStatusMessage("loading complete, question is live!");
+        setStatusMessage("question is live!");
       })
       .catch((error) => {
         setStatusMessage(`loading failed: ${error}`);

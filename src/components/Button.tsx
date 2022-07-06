@@ -9,7 +9,7 @@ export default function Button({
   children,
   className = "",
   onClick,
-  ...props
+  ...otherProps
 }: ButtonProps) {
   const classes: string = `
     my-2 px-4 py-2 shadow-md
@@ -21,7 +21,7 @@ export default function Button({
   `;
 
   return (
-    <button className={classes} onClick={onClick} {...props}>
+    <button className={classes} onClick={onClick} {...otherProps}>
       {children}
     </button>
   );

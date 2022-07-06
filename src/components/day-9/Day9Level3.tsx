@@ -1,4 +1,5 @@
 import RandomMaths from "./RandomMaths";
+import RandomGeo from "./RandomGeo";
 
 export default function Day9Level3() {
   return (
@@ -17,6 +18,15 @@ export default function Day9Level3() {
         .
       </p>
       <RandomMaths />
+      <h2 id="random-geo-question">Random Geometry Question</h2>
+      <p>
+        Questions are generated using the free version of the{" "}
+        <a target="_blank" href="http://geodb-cities-api.wirefreethought.com/">
+          GeoDB Cities API
+        </a>
+        . Note the API has a daily GET request limit of 86k.
+      </p>
+      <RandomGeo />
     </main>
   );
 }
