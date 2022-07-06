@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import Button from "../Button";
-import Katex from "../Katex";
+const Katex = React.lazy(() => import("../Katex"));
 
 /* API fetchers */
 interface Problem {
@@ -33,20 +33,6 @@ export default function RandomMaths() {
       });
   }
 
-  // render questions and answers
-  function renderQuestion() {
-    const qExpr = problem?.expression;
-    if (qExpr) {
-      return <Katex>qExpr</Katex>;
-    }
-  }
-  function renderAnswer() {
-    const aExpr = problem?.answer;
-    if (aExpr && showAnswer === true) {
-      return <span>= {problem.answer}</span>;
-    }
-  }
-
   // hide question after a new question is loaded
   useEffect(() => {
     setShowAnswer(false);
@@ -65,8 +51,10 @@ export default function RandomMaths() {
       </div>
       <div id="question" className="my-8 flex gap-2 text-xl roboto">
         <span>Question:</span>
-        <Katex expr={problem?.expression} />
-        {showAnswer && <Katex expr={`= ${problem?.answer}`} />}
+        <Suspense fallback={<div>Loading KaTeX renderer...</div>}>
+          <Katex expr={problem?.expression} />
+          {showAnswer && <Katex expr={`= ${problem?.answer}`} />}
+        </Suspense>
       </div>
       <div
         id="status"
