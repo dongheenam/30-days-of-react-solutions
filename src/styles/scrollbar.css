@@ -1,0 +1,23 @@
+/* better scrollbar for Chrome and Safari */
+article {
+  scroll-behavior: smooth;
+}
+@media screen and (min-width: 62em) {
+  article::-webkit-scrollbar {
+    display: block;
+  }
+  article::-webkit-scrollbar-track {
+    background-color: var(--chakra-colors-chakra-border-color);
+  }
+  article::-webkit-scrollbar-thumb {
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition-duration: 500ms;
+  }
+  article:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+  }
+  [data-theme="dark"] article::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}

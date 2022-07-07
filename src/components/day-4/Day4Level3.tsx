@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import Button from "../Button";
+import Button from "../ButtonOld";
 
 /* returns a random hex color as string e.g. #3a12d8 */
 export interface Color {

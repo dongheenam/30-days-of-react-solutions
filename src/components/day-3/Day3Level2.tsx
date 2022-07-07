@@ -1,4 +1,4 @@
-import Button from "../Button";
+import Button from "../ButtonOld";
 
 export default function Day3Level2() {
   return (

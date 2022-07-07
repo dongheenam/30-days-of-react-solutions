@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Button from "../Button";
+import Button from "../ButtonOld";
 
 type Hemisphere = "south" | "north";
 type Season = "winter" | "spring" | "summer" | "autumn";

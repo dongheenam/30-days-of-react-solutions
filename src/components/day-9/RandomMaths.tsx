@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect, useState } from "react";
-import Button from "../Button";
+import Button from "../ButtonOld";
 const Katex = React.lazy(() => import("../Katex"));
 
 /* API fetchers */
