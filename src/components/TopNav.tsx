@@ -7,30 +7,28 @@ interface TopNavProps {
   toggleMode: () => void;
 }
 export default function TopNav({ mode, toggleMode }: TopNavProps) {
-  const buttonClass = `transition-colors
-    hover:bg-slate-800 dark:hover:bg-slate-800`;
-
   return (
     <nav
       className="
-      p-4 pr-8 shadow-xl
-      bg-slate-900 text-slate-100 font-semibold
+      p-4 pr-8 shadow-black drop-shadow-xl
+      bg-gray-900 text-gray-100 font-semibold
       flex flex-row gap-4 items-center"
     >
       <div className="text-xl">30 Days of React Solutions</div>
       <div className="flex-grow"></div>
-      <Button as={Link} to="/" className={"px-4 " + buttonClass}>
+      <Button as={Link} to="/" className="button-black">
         Home
       </Button>
       <Button
+        iconOnly
         as="a"
         target="_blank"
         href="https://github.com/dongheenam"
-        className={buttonClass}
+        className="button-black"
       >
         <VscGithub size="1.5em" />
       </Button>
-      <Button onClick={toggleMode} className={buttonClass}>
+      <Button iconOnly onClick={toggleMode} className="button-black">
         <VscColorMode
           size="1.5em"
           style={{

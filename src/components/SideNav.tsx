@@ -4,7 +4,7 @@ function NavSubtitle({ children }: { children: string }) {
   return (
     <div
       className="uppercase font-bold text-sm
-      text-pink-500 dark:text-pink-300 "
+      text-pink-500 dark:text-pink-400 "
     >
       // {children}
     </div>
@@ -14,7 +14,11 @@ function NavSubtitle({ children }: { children: string }) {
 export default function SideNav() {
   return (
     <aside>
-      <nav className="flex flex-col gap-3 min-w-[20rem] p-8">
+      <nav
+        className="flex flex-col gap-3 min-w-[20rem] p-8 lg:pt-12
+          bg-white lg:bg-inherit dark:bg-inherit
+          dark:border-t-2 dark:border-slate-600 dark:lg:border-none"
+      >
         <Link to="/" className="font-semibold">
           Home
         </Link>
