@@ -14,16 +14,13 @@ export default function App() {
       <BrowserRouter>
         <TopNav mode={mode} toggleMode={toggleMode} />
         <div
-          className="min-h-0 
-          flex flex-grow flex-col-reverse lg:flex-row
-          justify-end lg:justify-center
-          "
+          className="min-h-0 flex flex-grow flex-col-reverse lg:flex-row
+          items-center lg:items-stretch justify-end lg:justify-center"
         >
           <SideNav />
           <main
             className="overflow-y-hidden lg:overflow-y-scroll p-8 pb-24
-            bg-gray-100 dark:bg-gray-900
-            "
+            bg-gray-100 dark:bg-gray-900"
           >
             <RenderPages />
           </main>

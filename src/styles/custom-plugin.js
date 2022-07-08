@@ -2,8 +2,8 @@ const plugin = require("tailwindcss/plugin");
 
 const highOpacity = 0.87;
 const highOpacityHex = "DE";
-const medOpacity = 0.6;
-const medOpacityHex = "99";
+const mdOpacity = 0.6;
+const mdOpacityHex = "99";
 const lowOpacity = 0.38;
 const lowOpacityHex = "61";
 
@@ -71,8 +71,8 @@ module.exports = plugin(function ({
       border: "1px solid red",
     },
     /* STATUSES WITH COLORS */
-    ".clickable-transparent": {
-      opacity: medOpacity,
+    ".click-transparent": {
+      opacity: mdOpacity,
       "&:hover": {
         opacity: highOpacity,
       },
@@ -118,7 +118,7 @@ module.exports = plugin(function ({
       "--click-active-bg": theme("colors.primary.200"),
       ".dark &": {
         "--click-color": theme("colors.primary.400"),
-        "--click-hover-bg": theme("colors.primary.900") + medOpacityHex,
+        "--click-hover-bg": theme("colors.primary.900") + mdOpacityHex,
         "--click-active-bg": theme("colors.primary.900"),
       },
     },
@@ -128,7 +128,7 @@ module.exports = plugin(function ({
       "--click-active-bg": theme("colors.secondary.200"),
       ".dark &": {
         "--click-color": theme("colors.secondary.400"),
-        "--click-hover-bg": theme("colors.secondary.900") + medOpacityHex,
+        "--click-hover-bg": theme("colors.secondary.900") + mdOpacityHex,
         "--click-active-bg": theme("colors.secondary.900"),
       },
     },
@@ -138,7 +138,7 @@ module.exports = plugin(function ({
       "--click-active-bg": theme("colors.red.200"),
       ".dark &": {
         "--click-color": theme("colors.red.400"),
-        "--click-hover-bg": theme("colors.red.900") + medOpacityHex,
+        "--click-hover-bg": theme("colors.red.900") + mdOpacityHex,
         "--click-active-bg": theme("colors.red.900"),
       },
     },
@@ -148,7 +148,7 @@ module.exports = plugin(function ({
       "--click-active-bg": theme("colors.amber.200"),
       ".dark &": {
         "--click-color": theme("colors.amber.400"),
-        "--click-hover-bg": theme("colors.amber.900") + medOpacityHex,
+        "--click-hover-bg": theme("colors.amber.900") + mdOpacityHex,
         "--click-active-bg": theme("colors.amber.900"),
       },
     },
@@ -158,7 +158,7 @@ module.exports = plugin(function ({
       "--click-active-bg": theme("colors.green.200"),
       ".dark &": {
         "--click-color": theme("colors.green.400"),
-        "--click-hover-bg": theme("colors.green.900") + medOpacityHex,
+        "--click-hover-bg": theme("colors.green.900") + mdOpacityHex,
         "--click-active-bg": theme("colors.green.900"),
       },
     },

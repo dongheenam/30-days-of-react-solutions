@@ -1,8 +1,19 @@
 interface TagProps {
-  children: string | React.ReactNode;
+  children: string | React.ReactElement;
+  key?: string;
+  className?: string;
+  [otherProps: string]: any;
 }
-export default function Tag(props: TagProps) {
-  return (
-    <div className="px-2 py-1 rounded-lg bg-purple-700">{props.children}</div>
-  );
+export default function Tag({
+  children,
+  key,
+  className,
+  ...otherProps
+}: TagProps) {
+  const tagProps = {
+    key: key,
+    className: `px-2 text-sm rounded ${className}`,
+    ...otherProps,
+  };
+  return <div {...tagProps}>{children}</div>;
 }

@@ -1,21 +1,23 @@
 interface InputProps {
   className?: string;
+  type: string;
   id: string;
   [otherProps: string]: any;
 }
 
 export default function Input({
   className = "",
+  type,
   id,
   ...otherProps
 }: InputProps) {
   const inputProps = {
-    className: `px-4 py-2 w-full bg-transparent rounded outline-2
-    outline-slate-300 dark:outline-slate-500
-    focus:outline-secondary-500 dark:focus:outline-secondary-300
+    className: `w-full bg-gray-100 dark:bg-gray-700
+      border-gray-900 rounded-md
+      opacity-md hover:opacity-high focus:ring-primary-500
      ${className}`,
     id: id,
     ...otherProps,
   };
-  return <input {...inputProps} />;
+  return <input type={type} {...inputProps} />;
 }

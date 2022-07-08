@@ -10,9 +10,9 @@ export default function Solution({
   ...otherProps
 }: SolutionProps) {
   const solutionProps = {
-    className: `my-8 p-8 flex flex-col gap-4 items-center
+    className: `my-8 p-8 flex flex-col gap-4
       rounded-md drop-shadow dark:drop-shadow-none
-      bg-white dark:bg-slate-800 ${className}`,
+      bg-gray-50 dark:bg-gray-850 ${className}`,
   };
   return <div {...solutionProps}>{children}</div>;
 }

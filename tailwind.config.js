@@ -35,6 +35,11 @@ module.exports = {
       primary: {
         DEFAULT: colors.sky[400],
       },
+      opacity: {
+        high: ".87",
+        md: ".6",
+        low: ".38",
+      },
     },
   },
   plugins: [
