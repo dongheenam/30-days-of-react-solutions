@@ -26,14 +26,14 @@ module.exports = plugin(function ({
     },
     /* DEFAULT COLORS */
     ".light": {
-      "--default-color": theme("colors.gray.950"),
-      "--default-bg": theme("colors.gray.100"),
+      "--default-color": theme("colors.gray.900"),
+      "--default-bg": theme("colors.gray.50"),
       color: "var(--default-color)",
       background: "var(--default-bg)",
     },
     ".dark": {
       "--default-color": theme("colors.gray.100"),
-      "--default-bg": theme("colors.gray.900"),
+      "--default-bg": theme("colors.gray.950"),
       color: "var(--default-color)",
       background: "var(--default-bg)",
     },

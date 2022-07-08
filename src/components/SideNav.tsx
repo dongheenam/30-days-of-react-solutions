@@ -4,7 +4,7 @@ function NavSubtitle({ children }: { children: string }) {
   return (
     <div
       className="uppercase font-bold text-sm
-      text-secondary-500 dark:text-secondary-400 "
+      text-secondary-500 dark:text-secondary-400"
     >
       // {children}
     </div>
@@ -15,14 +15,13 @@ export default function SideNav() {
   return (
     <aside>
       <nav
-        className="flex flex-col gap-3 min-w-[20rem] p-8 lg:pt-12
-          bg-white lg:bg-inherit dark:bg-inherit
-          dark:border-t-2 dark:border-slate-600 dark:lg:border-none"
+        className="h-full flex flex-col gap-3 min-w-[20rem] p-8 lg:pt-12
+          dark:border-t-2 dark:border-gray-600 dark:lg:border-none"
       >
-        <Link to="/" className="font-semibold">
+        <Link to="/" className="btn click">
           Home
         </Link>
-        <hr />
+        <hr className="border-gray-300 dark:border-gray-600" />
         <NavSubtitle>All Solutions</NavSubtitle>
         <Link to="/day-3">Day 3</Link>
         <Link to="/day-4">Day 4</Link>

@@ -20,13 +20,13 @@ export default function App() {
           "
         >
           <SideNav />
-          <article
-            className="overflow-y-hidden lg:overflow-y-scroll p-8 pb-24 lg:pt-12
+          <main
+            className="overflow-y-hidden lg:overflow-y-scroll p-8 pb-24
+            bg-gray-100 dark:bg-gray-900
             "
-            style={{ width: "min(100%, 60rem)" }}
           >
             <RenderPages />
-          </article>
+          </main>
         </div>
       </BrowserRouter>
     </div>

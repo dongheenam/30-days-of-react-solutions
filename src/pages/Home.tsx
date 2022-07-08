@@ -11,34 +11,24 @@ export default function Home() {
         </A>
         !
       </p>
-      <a href="#" className="clickable">
-        Hello there!
-      </a>
-      <a href="#" className="disabled">
-        Hello there!
-      </a>
-
-      <p>
-        <button
-          className="btn btn-border
-          text-secondary-600 border-secondary-600
-          dark:text-secondary-300 dark:border-secondary-300
-          hover:bg-secondary-100 active:bg-secondary-200
-          dark:hover:bg-secondary-900 dark:active:bg-secondary-800"
-        >
-          Example button
-        </button>
-        <button className="btn click click-filled">Default</button>
+      <h2>Design elements</h2>
+      <h3>Buttons</h3>
+      <div className="p-2 flex gap-4">
+        <button className="btn click">Default</button>
+        <button className="btn click click-filled">Default filled</button>
+        <button className="btn click click-primary">Primary</button>
         <button className="btn click click-filled click-primary">
-          Primary
+          Primary filled
         </button>
+      </div>
+      <div className="p-2 flex gap-4">
         <button className="btn click click-filled click-secondary">
           Secondary
         </button>
         <button className="btn click click-filled click-red">Red</button>
         <button className="btn click click-filled click-amber">Amber</button>
         <button className="btn click click-filled click-green">Green</button>
-      </p>
+      </div>
     </>
   );
 }
