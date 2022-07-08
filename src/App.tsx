@@ -17,8 +17,6 @@ export default function App() {
           className="min-h-0 
           flex flex-grow flex-col-reverse lg:flex-row
           justify-end lg:justify-center
-          text-slate-900 dark:text-slate-50
-          bg-slate-50 dark:bg-slate-900
           "
         >
           <SideNav />

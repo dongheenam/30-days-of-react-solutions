@@ -71,8 +71,8 @@ export default function Day8Level2() {
         <Button
           onClick={() => setCountry(randomCountry(countries))}
           className="border-0 px-8 text-slate-50
-          bg-pink-600 hover:bg-pink-500 
-          dark:bg-pink-900 dark:hover:bg-pink-800"
+          bg-secondary-600 hover:bg-secondary-500 
+          dark:bg-secondary-900 dark:hover:bg-secondary-800"
         >
           Random country!
         </Button>

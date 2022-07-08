@@ -1,36 +1,53 @@
 import React from "react";
 
-interface ButtonProps {
+export interface ButtonProps {
   children: string | React.ReactElement;
   as?: string | React.ElementType;
-  primary?: boolean;
+  variant?: "solid" | "outline" | "text";
+  color?: "default" | "primary" | "secondary" | "red" | "amber" | "green";
   leftIcon?: React.ReactElement;
   rightIcon?: React.ReactElement;
-  iconOnly?: boolean;
   className?: string;
   [otherProps: string]: any;
 }
 
 export default function Button({
   as = "button",
+  variant = "text",
+  color = "default",
   className = "",
-  primary = false,
   leftIcon,
   rightIcon,
-  iconOnly = false,
   children,
   ...otherProps
 }: ButtonProps) {
-  const buttonColor = primary
-    ? "button-primary"
-    : !className.includes("button")
-    ? "button-default"
-    : "";
+  let defaultClassName = "btn click";
+  switch (variant) {
+    case "solid":
+      defaultClassName += " click-filled";
+      break;
+    case "outline":
+      defaultClassName += " border";
+  }
+  switch (color) {
+    case "primary":
+      defaultClassName += " click-primary";
+      break;
+    case "secondary":
+      defaultClassName += " click-secondary";
+      break;
+    case "red":
+      defaultClassName += " click-red";
+      break;
+    case "amber":
+      defaultClassName += " click-amber";
+      break;
+    case "green":
+      defaultClassName += " click-green";
+  }
 
   const buttonProps = {
-    className: `p-2 rounded-md inline-flex align-middle
-    font-semibold transition-colors ${buttonColor}
-    ${!iconOnly && "px-4"} ${className}`,
+    className: `inline-flex align-middle ${defaultClassName} ${className}`,
     ...otherProps,
   };
   const innerComponent = (

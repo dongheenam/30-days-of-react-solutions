@@ -4,7 +4,7 @@ function NavSubtitle({ children }: { children: string }) {
   return (
     <div
       className="uppercase font-bold text-sm
-      text-pink-500 dark:text-pink-400 "
+      text-secondary-500 dark:text-secondary-400 "
     >
       // {children}
     </div>

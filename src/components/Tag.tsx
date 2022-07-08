@@ -3,8 +3,6 @@ interface TagProps {
 }
 export default function Tag(props: TagProps) {
   return (
-    <div className="px-2 py-1 rounded-lg bg-purple-700 text-white">
-      {props.children}
-    </div>
+    <div className="px-2 py-1 rounded-lg bg-purple-700">{props.children}</div>
   );
 }

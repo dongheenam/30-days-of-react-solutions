@@ -12,7 +12,7 @@ export default function Input({
   const inputProps = {
     className: `px-4 py-2 w-full bg-transparent rounded outline-2
     outline-slate-300 dark:outline-slate-500
-    focus:outline-pink-500 dark:focus:outline-pink-300
+    focus:outline-secondary-500 dark:focus:outline-secondary-300
      ${className}`,
     id: id,
     ...otherProps,

@@ -16,7 +16,7 @@ export default function A({
   const aProps = {
     href: href,
     target: blank ? "_blank" : "",
-    className: `text-pink-600 dark:text-pink-400 hover:underline ${className}`,
+    className: `text-secondary-600 dark:text-secondary-400 hover:underline ${className}`,
     ...otherProps,
   };
   return <a {...aProps}>{children}</a>;

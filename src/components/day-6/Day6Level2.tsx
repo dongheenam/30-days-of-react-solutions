@@ -87,7 +87,7 @@ export default function Day6Level2() {
           <div
             key={num}
             className={`aspect-square flex justify-center items-center
-              text-white text-3xl mont ${classNum(num)}`}
+              text-gray-50 text-3xl mont ${classNum(num)}`}
           >
             {num}
           </div>
@@ -103,7 +103,9 @@ export default function Day6Level2() {
           <div
             key={color.value}
             className={`aspect-square flex justify-center items-center
-              text-xl mont ${color.whiteText ? "text-white" : "text-black"}`}
+              text-xl mont ${
+                color.whiteText ? "text-gray-50" : "text-gray-950"
+              }`}
             style={{ backgroundColor: color.value }}
           >
             {color.value}

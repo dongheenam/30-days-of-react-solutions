@@ -200,7 +200,7 @@ export default function Day9Level2() {
           <Hand rotation={rotation.minuteRotation} />
           <Hand
             rotation={rotation.secondRotation}
-            className="w-[0.5%] aspect-[1/80] bg-pink-500"
+            className="w-[0.5%] aspect-[1/80] bg-secondary-500"
           />
         </div>
       </div>

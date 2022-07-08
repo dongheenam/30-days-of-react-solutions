@@ -47,7 +47,7 @@ export default function Day3Level2() {
         <Button
           type="submit"
           form="subscribe"
-          className="w-72 bg-red-500 hover:bg-red-700 text-white border-0"
+          className="w-72 bg-red-500 hover:bg-red-700 border-0"
         >
           Subscribe
         </Button>
