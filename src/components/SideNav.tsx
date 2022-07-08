@@ -32,7 +32,6 @@ export default function SideNav() {
         <NavLink to="/day-3">Day 3</NavLink>
         <NavLink to="/day-4">Day 4</NavLink>
         <NavLink to="/day-6">Day 6</NavLink>
-        <NavLink to="/day-7">Day 7</NavLink>
         <NavLink to="/day-8">Day 8</NavLink>
         <NavLink to="/day-9">Day 9</NavLink>
       </nav>

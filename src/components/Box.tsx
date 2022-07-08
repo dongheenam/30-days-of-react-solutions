@@ -4,7 +4,7 @@ interface SolutionProps {
   [otherProps: string]: any;
 }
 
-export default function Solution({
+export default function Box({
   children,
   className = "",
   ...otherProps

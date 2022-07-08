@@ -1,6 +1,6 @@
 import { VscPassFilled } from "react-icons/vsc";
 
-import Solution from "../../components/Solution";
+import Box from "../../components/Box";
 import Tag from "../../components/Tag";
 import imgURL from "../../images/asabeneh.jpg";
 
@@ -32,7 +32,7 @@ export default function Day3Task2() {
   return (
     <>
       <h2>User card</h2>
-      <Solution className="items-start roboto">
+      <Box className="items-start roboto">
         <div className="max-w-[15rem]">
           <img
             src={imgURL}
@@ -52,7 +52,7 @@ export default function Day3Task2() {
             </Tag>
           ))}
         </div>
-      </Solution>
+      </Box>
     </>
   );
 }
