@@ -25,6 +25,15 @@
   p {
     @apply mb-8;
   }
+  /* default colors */
+  .light {
+    color: theme(colors.gray.900);
+    background: theme(colors.gray.50);
+  }
+  .dark {
+    color: theme(colors.gray.100);
+    background: theme(colors.gray.950);
+  }
 
   /* forms and input */
   [type="text"],

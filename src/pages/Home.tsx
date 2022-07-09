@@ -1,4 +1,5 @@
 import A from "../components/A";
+import Button from "../components/Button";
 
 export default function Home() {
   return (
@@ -13,16 +14,48 @@ export default function Home() {
       </p>
       <h2>Design elements</h2>
       <h3>Buttons</h3>
-      <div className="p-2 flex flex-wrap gap-4">
-        <button className="btn fo fo--hover">Default</button>
-        <button className="btn fo fo--hover fo-outline">Outlined</button>
-        <button className="btn fo fo--hover fo-fill">Filled</button>
-        <button className="btn fo fo-primary">Primary</button>
-        <button className="btn fo fo-fill fo-primary">Primary filled</button>
-        <button className="btn">Secondary</button>
-        <button className="btn">Red</button>
-        <button className="btnr">Amber</button>
-        <button className="btn">Green</button>
+      <div className="p-2 flex flex-wrap items-center gap-4">
+        <span className="w-16">Text</span>
+        <Button>Default</Button>
+        <Button color="primary">Primary</Button>
+        <Button color="red">Red</Button>
+        <Button color="green">Green</Button>
+      </div>
+      <div className="p-2 flex flex-wrap items-center gap-4">
+        <span className="w-16">Outline</span>
+        <Button variant="outline">Default</Button>
+        <Button variant="outline" color="primary">
+          Primary
+        </Button>
+        <Button variant="outline" color="red">
+          Red
+        </Button>
+        <Button variant="outline" color="green">
+          Green
+        </Button>
+      </div>
+      <div className="p-2 flex flex-wrap items-center gap-4">
+        <span className="w-16">Solid</span>
+        <Button variant="solid">Default</Button>
+        <Button variant="solid" color="primary">
+          Primary
+        </Button>
+        <Button variant="solid" color="red">
+          Red
+        </Button>
+        <Button variant="solid" color="green">
+          Green
+        </Button>
+      </div>
+      <div className="p-2 flex flex-wrap items-center gap-4">
+        <span className="w-16">Disabled</span>
+        <Button disabled>Default</Button>
+        <Button variant="outline" color="primary" disabled>
+          Primary
+        </Button>
+        <Button variant="solid" color="red" disabled>
+          Red
+        </Button>
       </div>
       <h3>Inputs</h3>
       <div>

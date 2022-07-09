@@ -8,7 +8,7 @@ interface TopNavProps {
   toggleMode: () => void;
 }
 export default function TopNav({ mode, toggleMode }: TopNavProps) {
-  const buttonClassName = "hover:bg-gray-700 active:bg-gray-600";
+  const buttonClassName = "dark:hover:bg-gray-700 dark:active:bg-gray-600";
   return (
     <nav
       className="dark

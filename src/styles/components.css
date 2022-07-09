@@ -1,7 +1,7 @@
 @layer components {
   /* buttons */
   .btn {
-    @apply p-2 px-4 font-semibold rounded-md;
+    @apply p-2 px-4 font-semibold rounded-md border border-transparent;
   }
   .btn-icon {
     @apply px-2;

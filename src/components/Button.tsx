@@ -4,7 +4,8 @@ export interface ButtonProps {
   children: string | React.ReactElement;
   as?: string | React.ElementType;
   variant?: "solid" | "outline" | "text";
-  color?: "default" | "primary" | "secondary" | "red" | "amber" | "green";
+  color?: "default" | "primary" | "red" | "green";
+  disabled?: boolean;
   leftIcon?: React.ReactElement;
   rightIcon?: React.ReactElement;
   className?: string;
@@ -15,39 +16,88 @@ export default function Button({
   as = "button",
   variant = "text",
   color = "default",
+  disabled = false,
   className = "",
   leftIcon,
   rightIcon,
   children,
   ...otherProps
 }: ButtonProps) {
-  let defaultClassName = "btn click";
+  let defaultClass = "btn inline-flex align-middle";
+  // common to all colors
   switch (variant) {
     case "solid":
-      defaultClassName += " click-filled";
+      defaultClass += " text-gray-100 dark:text-gray-950";
       break;
     case "outline":
-      defaultClassName += " border";
-  }
-  switch (color) {
-    case "primary":
-      defaultClassName += " click-primary";
-      break;
-    case "secondary":
-      defaultClassName += " click-secondary";
-      break;
-    case "red":
-      defaultClassName += " click-red";
-      break;
-    case "amber":
-      defaultClassName += " click-amber";
-      break;
-    case "green":
-      defaultClassName += " click-green";
+      defaultClass += " border-current";
   }
 
+  if (disabled) {
+    defaultClass += " disabled";
+  }
+
+  // red text is "red", primary filled is "primary-f", etc.
+  const scheme = `${color}${variant === "solid" ? "-f" : ""}`;
+  switch (scheme) {
+    /* text and outlined buttons */
+    case "default":
+      if (!disabled) {
+        defaultClass += " hover:bg-gray-200 dark:hover:bg-gray-800";
+        defaultClass += " active:bg-gray-300 dark:active:bg-gray-700";
+      }
+      break;
+    case "primary":
+      defaultClass += " text-primary-600 dark:text-primary-400";
+      if (!disabled) {
+        defaultClass += " hover:bg-primary-100 dark:hover:bg-primary-900/md";
+        defaultClass += " active:bg-primary-200 dark:active:bg-primary-900";
+      }
+      break;
+    case "red":
+      defaultClass += " text-red-600 dark:text-red-400";
+      if (!disabled) {
+        defaultClass += " hover:bg-gray-200 dark:hover:bg-gray-800";
+        defaultClass += " active:bg-gray-300 dark:active:bg-gray-700";
+      }
+      break;
+    case "green":
+      defaultClass += " text-green-600 dark:text-green-400";
+      if (!disabled) {
+        defaultClass += " hover:bg-gray-200 dark:hover:bg-gray-800";
+        defaultClass += " active:bg-gray-300 dark:active:bg-gray-700";
+      }
+      break;
+    case "default-f":
+      defaultClass += " bg-gray-800 dark:bg-gray-400";
+      if (!disabled) {
+        defaultClass += " hover:bg-gray-700 dark:hover:bg-gray-300";
+        defaultClass += " active:bg-gray-600 dark:active:bg-gray-200";
+      }
+      break;
+    case "primary-f":
+      defaultClass += " bg-primary-500 dark:bg-primary-300";
+      if (!disabled) {
+        defaultClass += " hover:bg-primary-600 dark:hover:bg-primary-400";
+        defaultClass += " active:bg-primary-700 dark:active:bg-primary-500";
+      }
+      break;
+    case "red-f":
+      defaultClass += " bg-red-500 dark:bg-red-300";
+      if (!disabled) {
+        defaultClass += " hover:bg-red-600 dark:hover:bg-red-400";
+        defaultClass += " active:bg-red-700 dark:active:bg-red-500";
+      }
+      break;
+    case "green-f":
+      defaultClass += " bg-green-500 dark:bg-green-300";
+      if (!disabled) {
+        defaultClass += " hover:bg-green-600 dark:hover:bg-green-400";
+        defaultClass += " active:bg-green-700 dark:active:bg-green-500";
+      }
+  }
   const buttonProps = {
-    className: `inline-flex align-middle ${defaultClassName} ${className}`,
+    className: `${defaultClass} ${className}`,
     ...otherProps,
   };
   const innerComponent = (
