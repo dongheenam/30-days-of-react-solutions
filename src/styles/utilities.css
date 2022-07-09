@@ -1,0 +1,53 @@
+@layer utilities {
+  /* debugging */
+  .debug {
+    @apply border border-red-500;
+  }
+  /* item that cannot be interacted with */
+  .disabled {
+    @apply cursor-default opacity-low;
+  }
+  /* item that changes its opacity when interacted */
+  .ia-opacity {
+    @apply opacity-md hover:opacity-high active:opacity-100 checked:opacity-100;
+  }
+  /* items that can be filled or outlined */
+  .fo {
+    --fo-color: var(--default-color);
+    color: var(--fo-color);
+    @apply border border-transparent;
+    /* shortcut: transition-colors transition-opacity */
+    transition-property: color, background-color, border-color,
+      text-decoration-color, fill, stroke, opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+  .fo--hover {
+    --fo-hover-bg: theme(colors.gray.200);
+    --fo-active-bg: theme(colors.gray.300);
+  }
+  .fo--hover:hover {
+    background: var(--fo-hover-bg);
+  }
+  .fo--hover:active {
+    background: var(--fo-active-bg);
+  }
+  .dark .fo--hover {
+    --fo-hover-bg: theme(colors.gray.800);
+    --fo-active-bg: theme(colors.gray.700);
+  }
+  .fo-outline {
+    @apply border-current;
+  }
+  .fo-fill {
+    color: var(--default-bg);
+    background: var(--fo-color);
+  }
+
+  .fo-primary {
+    --fo-color: theme(colors.primary.500);
+  }
+  .dark .fo-primary {
+    --fo-color: theme(colors.primary.400);
+  }
+}

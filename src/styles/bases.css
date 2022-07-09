@@ -1,0 +1,56 @@
+@layer base {
+  /* GLOBAL LAYOUTS */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @apply text-lg;
+  }
+  #app {
+    min-height: 100vh;
+  }
+  main {
+    width: min(95%, 800px);
+    @apply pb-16;
+  }
+  /* TYPOGRAPHY */
+  h1 {
+    @apply text-4xl font-bold mt-8 mb-16;
+  }
+  h2 {
+    @apply text-3xl font-bold mt-12 mb-6;
+  }
+  h3 {
+    @apply text-2xl font-bold mt-8 mb-4;
+  }
+  p {
+    @apply mb-8;
+  }
+
+  /* forms and input */
+  [type="text"],
+  [type="email"],
+  [type="url"],
+  [type="password"],
+  [type="number"],
+  [type="date"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="search"],
+  [type="tel"],
+  [type="time"],
+  [type="week"],
+  [type="checkbox"],
+  [type="radio"],
+  [multiple],
+  textarea,
+  select {
+    @apply rounded bg-gray-50 dark:bg-gray-800
+      hover:border-gray-700 focus:border-primary-500 focus:ring-primary-500
+      hover:dark:border-gray-300 dark:focus:border-primary-300 dark:focus:ring-primary-300;
+  }
+
+  [type="checkbox"],
+  [type="radio"] {
+    @apply text-primary-500 dark:text-primary-500;
+  }
+}
