@@ -27,6 +27,7 @@ export default function TopNav({ mode, toggleMode }: TopNavProps) {
         href="https://github.com/dongheenam"
         className={buttonClassName}
         icon={<VscGithub size="1.5em" />}
+        aria-label="github"
       />
       <IconButton
         onClick={toggleMode}
@@ -40,6 +41,7 @@ export default function TopNav({ mode, toggleMode }: TopNavProps) {
             }}
           />
         }
+        aria-label="toggle color mode"
       />
     </nav>
   );

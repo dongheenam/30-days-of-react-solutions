@@ -1,5 +1,6 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { useEffect, useState } from "react";
+import A from "../../components/A";
 import Box from "../../components/Box";
 import Button from "../../components/Button";
 import Skeleton from "../../components/Skeleton";
@@ -42,6 +43,17 @@ export default function Day9Task2() {
   return (
     <>
       <h2 id="random-maths-problem">Random maths problem</h2>
+      <p>
+        The questions are fetched from{" "}
+        <A blank href="https://x-math.herokuapp.com/">
+          xMath
+        </A>{" "}
+        and rendered with{" "}
+        <A blank href="https://katex.org/">
+          KaTeX
+        </A>
+        .
+      </p>
       <Box>
         <div className="flex gap-4">
           <Button
@@ -55,19 +67,21 @@ export default function Day9Task2() {
             Reveal Answer
           </Button>
         </div>
-        <div className="roboto text-xl mt-4 h-12">
-          {isLoading ? (
-            <Skeleton text lines={1} />
-          ) : (
-            <>
-              <span>Question: </span>
-              <Katex expr={problem?.expression} />
-              {showAnswer && problem && (
-                <Katex expr={`= ${problem.answer}`} className="ml-2" />
-              )}
-            </>
-          )}
-        </div>
+        <Suspense fallback={<Skeleton />}>
+          <div className="roboto text-xl mt-4 h-12">
+            {isLoading ? (
+              <Skeleton text lines={1} />
+            ) : (
+              <>
+                <span>Question: </span>
+                <Katex expr={problem?.expression} />
+                {showAnswer && problem && (
+                  <Katex expr={`= ${problem.answer}`} className="ml-2" />
+                )}
+              </>
+            )}
+          </div>
+        </Suspense>
       </Box>
     </>
   );

@@ -30,6 +30,9 @@ module.exports = {
       green: colors.green,
       white: colors.white,
       black: colors.black,
+      transparent: colors.transparent,
+      current: colors.current,
+      inherit: colors.inherit,
     },
     extend: {
       primary: {

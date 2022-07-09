@@ -72,6 +72,7 @@ function Ticks() {
     <React.Fragment>
       {hours.map((hour) => (
         <div
+          key={hour}
           className="absolute
           w-[1%] aspect-[1/10] bg-gray-700 dark:bg-gray-300"
           style={{

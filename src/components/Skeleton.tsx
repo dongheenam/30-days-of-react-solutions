@@ -19,8 +19,11 @@ export default function Skeleton({ text, lines }: SkeletonProps) {
     }
     return (
       <div className={`flex flex-col ${gap}`}>
-        {range(nLines).map(() => (
-          <span className={`${height} w-full ${commonClass}`} />
+        {range(nLines).map((num) => (
+          <span
+            key={`skel-row-${num}`}
+            className={`${height} w-full ${commonClass}`}
+          />
         ))}
       </div>
     );

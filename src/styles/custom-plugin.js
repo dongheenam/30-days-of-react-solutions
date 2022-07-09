@@ -7,23 +7,9 @@ const mdOpacityHex = "99";
 const lowOpacity = 0.38;
 const lowOpacityHex = "61";
 
-module.exports = plugin(function ({
-  addBase,
-  addComponents,
-  addUtilities,
-  theme,
-}) {
+module.exports = plugin(function ({ addBase, addUtilities, theme }) {
   /* reference: https://www.joshwcomeau.com/css/custom-css-reset/ */
   addBase({
-    /* GLOBAL LAYOUTS */
-    body: {
-      "-webkit-font-smoothing": "antialiased",
-      "-moz-osx-font-smoothing": "grayscale",
-      fontSize: theme("fontSize.lg"),
-    },
-    "#app": {
-      minHeight: "100vh",
-    },
     /* DEFAULT COLORS */
     ".light": {
       "--default-color": theme("colors.gray.900"),
@@ -37,53 +23,9 @@ module.exports = plugin(function ({
       color: "var(--default-color)",
       background: "var(--default-bg)",
     },
-    main: {
-      width: "min(95%, 800px)",
-      paddingBottom: theme("spacing[16]"),
-    },
-    /* TYPOGRAPHY */
-    h1: {
-      fontSize: theme("fontSize.4xl"),
-      fontWeight: theme("fontWeight.bold"),
-      marginTop: theme("spacing[8]"),
-      marginBottom: theme("spacing[16]"),
-    },
-    h2: {
-      fontSize: theme("fontSize.3xl"),
-      fontWeight: theme("fontWeight.bold"),
-      marginTop: theme("spacing[12]"),
-      marginBottom: theme("spacing[6]"),
-    },
-    h3: {
-      fontSize: theme("fontSize.2xl"),
-      fontWeight: theme("fontWeight.bold"),
-      marginTop: theme("spacing[8]"),
-      marginBottom: theme("spacing[4]"),
-    },
-    p: {
-      marginBottom: theme("spacing[8]"),
-    },
   });
 
   addUtilities({
-    /* FOR DEBUGGING */
-    ".debug": {
-      border: "1px solid red",
-    },
-    /* STATUSES WITH COLORS */
-    ".click-transparent": {
-      opacity: mdOpacity,
-      "&:hover": {
-        opacity: highOpacity,
-      },
-      "&:active": {
-        opacity: 1,
-      },
-    },
-    ".disabled": {
-      cursor: "default",
-      opacity: lowOpacity,
-    },
     ".click": {
       color: "var(--click-color, var(--default-color))",
       borderColor: "var(--click-color, var(--default-color))",
@@ -212,24 +154,6 @@ module.exports = plugin(function ({
         "--click-hover-bg": theme("colors.green.500"),
         "--click-active-bg": theme("colors.green.600"),
       },
-    },
-  });
-
-  addComponents({
-    ".btn": {
-      padding: theme("spacing[2]"),
-      paddingLeft: theme("spacing[4]"),
-      paddingRight: theme("spacing[4]"),
-      fontWeight: theme("fontWeight.semibold"),
-      borderRadius: "0.375rem",
-      transitionDuration: theme("transitionDuration.DEFAULT"),
-      transitionProperty:
-        "color, background-color, border-color, text-decoration-color, fill, stroke, opacity",
-      transitionTimingFunction: theme("transitionTimingFunction.DEFAULT"),
-    },
-    ".btn-icon": {
-      paddingLeft: theme("spacing[2]"),
-      paddingRight: theme("spacing[2]"),
     },
   });
 });
