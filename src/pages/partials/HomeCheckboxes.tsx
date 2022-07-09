@@ -1,23 +1,9 @@
-import { useState } from "react";
-import Checkbox from "../../components/Checkbox";
-import Label from "../../components/Label";
-
-interface Checkboxes {
-  name: string;
-  items: Array<{
-    label: string;
-    id: string;
-    value: any;
-    disabled?: boolean;
-  }>;
-}
-
-interface CheckedItems {
-  [value: string]: boolean;
-}
+import useCheckboxes from "../../hooks/useCheckboxes";
+import CheckboxGroup, { Checkboxes } from "../../components/CheckboxGroup";
 
 export default function HomeCheckBoxes() {
-  const [checkedItems, setCheckedItems] = useState<CheckedItems>({});
+  const useCB = useCheckboxes();
+  const [_checkedStatuses, checkedItems, _handleChange] = useCB;
 
   const checkboxes: Checkboxes = {
     name: "cb-example",
@@ -29,39 +15,13 @@ export default function HomeCheckBoxes() {
     ],
   };
 
-  function handleCBChange({
-    target: { value, checked },
-  }: React.ChangeEvent<HTMLInputElement>) {
-    setCheckedItems({ ...checkedItems, [value]: checked });
-  }
-  function reduceCheckedItems(checkedItems: CheckedItems) {
-    return Object.keys(checkedItems).filter((key) => checkedItems[key]);
-  }
-
   return (
     <>
       <h3>Checkboxes</h3>
       <div className="mb-4">
-        <span>
-          Checkbox values: {reduceCheckedItems(checkedItems).join(", ")}
-        </span>
+        <span>Checkbox values: {checkedItems.join(", ")}</span>
         <div className="border border-gray-500 rounded-md px-4 py-2 flex flex-col">
-          {checkboxes.items.map((item) => (
-            <Label
-              id={item.id}
-              key={item.id}
-              disabled={item.disabled}
-              input={
-                <Checkbox
-                  value={item.value}
-                  checked={checkedItems[item.value]}
-                  onChange={(e) => handleCBChange(e)}
-                />
-              }
-            >
-              {item.label}
-            </Label>
-          ))}
+          <CheckboxGroup checkboxes={checkboxes} useCheckboxes={useCB} />
         </div>
       </div>
     </>

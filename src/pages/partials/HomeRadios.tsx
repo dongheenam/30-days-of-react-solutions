@@ -1,19 +1,9 @@
-import { useState } from "react";
-import Label from "../../components/Label";
-import Radio from "../../components/Radio";
-
-interface Radios {
-  name: string;
-  items: Array<{
-    label: string;
-    id: string;
-    value: any;
-    disabled?: boolean;
-  }>;
-}
+import RadioGroup, { Radios } from "../../components/RadioGroup";
+import useRadios from "../../hooks/useRadios";
 
 export default function HomeRadios() {
-  const [selected, setSelected] = useState<string>();
+  const useR = useRadios();
+  const [selectedItem, handleChange] = useR;
 
   const radios: Radios = {
     name: "radio-example",
@@ -25,33 +15,13 @@ export default function HomeRadios() {
     ],
   };
 
-  function handleRChange({
-    target: { value },
-  }: React.ChangeEvent<HTMLInputElement>) {
-    setSelected(value);
-  }
   return (
     <>
       <h3>Radios</h3>
       <div className="mb-4">
-        <span>Radio value: {selected}</span>
+        <span>Radio value: {selectedItem}</span>
         <div className="border border-gray-500 rounded-md px-4 py-2 flex flex-col">
-          {radios.items.map((item) => (
-            <Label
-              id={item.id}
-              key={item.id}
-              disabled={item.disabled}
-              input={
-                <Radio
-                  value={item.value}
-                  checked={item.value === selected}
-                  onChange={(e) => handleRChange(e)}
-                />
-              }
-            >
-              {item.label}
-            </Label>
-          ))}
+          <RadioGroup radios={radios} useRadios={useR} />
         </div>
       </div>
     </>

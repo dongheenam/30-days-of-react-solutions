@@ -1,18 +1,44 @@
-import React from "react";
-import { LabelProps } from "./Label";
-import { RadioProps } from "./Radio";
+import { UseRadios } from "../hooks/useRadios";
+import Label from "./Label";
+import Radio from "./Radio";
 
-interface RadioGroupProps {
-  children: React.ReactElement<RadioProps | LabelProps>[];
+export type Value = string | number;
+export interface Radios {
   name: string;
-  [otherProps: string]: any;
+  items: Array<{
+    label: string;
+    id: string;
+    value: Value;
+    disabled?: boolean;
+  }>;
 }
 
-export default function RadioGroup({
-  children,
-  name,
-  ...otherProps
-}: RadioGroupProps) {
-  const nameContext = React.createContext(name);
-  return <div>{children}</div>;
+interface RadioGroupProps {
+  radios: Radios;
+  useRadios: UseRadios;
+}
+
+export default function RadioGroup({ radios, useRadios }: RadioGroupProps) {
+  const [selectedItem, handleChange] = useRadios;
+
+  return (
+    <>
+      {radios.items.map((item) => (
+        <Label
+          id={item.id}
+          key={item.id}
+          disabled={item.disabled}
+          input={
+            <Radio
+              value={item.value}
+              checked={item.value === selectedItem}
+              onChange={(e) => handleChange(e)}
+            />
+          }
+        >
+          {item.label}
+        </Label>
+      ))}
+    </>
+  );
 }
