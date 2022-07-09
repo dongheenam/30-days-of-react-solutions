@@ -11,7 +11,7 @@ export default function TopNav({ mode, toggleMode }: TopNavProps) {
   const buttonClassName = "dark:hover:bg-gray-700 dark:active:bg-gray-600";
   return (
     <nav
-      className="dark
+      className="dark sticky top-0 z-[99]
       p-4 px-8 shadow-black drop-shadow-xl
       bg-gray-800 font-semibold
       flex flex-row gap-4 items-center"

@@ -6,4 +6,16 @@
   .btn-icon {
     @apply px-2;
   }
+
+  /* checkboxes and radios */
+  .checkbox,
+  .radio {
+    @apply bg-transparent 
+      text-primary-500 dark:text-primary-300/high
+      focus:outline-primary-500 dark:focus:outline-primary-300/high
+      focus:ring-transparent focus:ring-offset-transparent;
+  }
+  .checkbox {
+    @apply rounded-sm;
+  }
 }

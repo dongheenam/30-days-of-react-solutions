@@ -1,26 +1,26 @@
-interface CheckboxProps {
+export interface RadioProps {
   className?: string;
   disabled?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   [otherProps: string]: any;
 }
 
-export default function Checkbox({
+export default function Radio({
   className = "",
   disabled = false,
   onChange,
   ...otherProps
-}: CheckboxProps) {
-  const checkboxProps = {
-    className: `checkbox${disabled ? " disabled" : ""} ${className}`,
+}: RadioProps) {
+  const radioProps = {
+    className: `radio${disabled ? " disabled" : ""} ${className}`,
     ...otherProps,
   };
   return (
     <input
-      type="checkbox"
+      type="radio"
       onChange={onChange}
       disabled={disabled}
-      {...checkboxProps}
+      {...radioProps}
     />
   );
 }
