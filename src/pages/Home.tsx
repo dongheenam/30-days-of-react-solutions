@@ -2,6 +2,7 @@ import A from "../components/A";
 import HomeButtons from "./partials/HomeButtons";
 import HomeCheckBoxes from "./partials/HomeCheckboxes";
 import HomeRadios from "./partials/HomeRadios";
+import HomeSwitches from "./partials/HomeSwitches";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <HomeButtons />
       <HomeCheckBoxes />
       <HomeRadios />
+      <HomeSwitches />
     </>
   );
 }
