@@ -3,11 +3,12 @@ import { range } from "../utils";
 interface SkeletonProps {
   text?: boolean;
   lines?: number;
+  className?: string;
 }
 
-export default function Skeleton({ text, lines }: SkeletonProps) {
+export default function Skeleton({ text, lines, className }: SkeletonProps) {
   const commonClass = `bg-gray-200 dark:bg-gray-700 
-    rounded opacity-md animate-pulse`;
+    rounded opacity-md animate-pulse ${className}`;
   if (text) {
     const nLines = lines ? lines : 1;
     let gap: undefined | string, height: string;
@@ -28,5 +29,5 @@ export default function Skeleton({ text, lines }: SkeletonProps) {
       </div>
     );
   }
-  return <div className={`h-full w-full ${commonClass}`}></div>;
+  return <div className={`w-full h-full ${commonClass}`}></div>;
 }

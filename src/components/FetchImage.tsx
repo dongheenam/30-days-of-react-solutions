@@ -12,21 +12,21 @@ export default function FetchImage({
   alt,
   ...otherProps
 }: FetchImageProps) {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [localSrc, setLocalSrc] = useState<string>();
 
   useEffect(() => {
-    setIsLoading(true);
-    fetch(src)
-      .then((response) => response.blob())
-      .then((imageBlob) => {
-        setLocalSrc(URL.createObjectURL(imageBlob));
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        console.error("[FetchImage] error fetching image: ", error);
-        setIsLoading(false);
-      });
+    // setIsLoading(true);
+    // fetch(src)
+    //   .then((response) => response.blob())
+    //   .then((imageBlob) => {
+    //     setLocalSrc(URL.createObjectURL(imageBlob));
+    //     setIsLoading(false);
+    //   })
+    //   .catch((error) => {
+    //     console.error("[FetchImage] error fetching image: ", error);
+    //     setIsLoading(false);
+    //   });
   }, [src]);
 
   return (

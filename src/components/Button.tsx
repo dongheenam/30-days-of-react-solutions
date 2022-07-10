@@ -23,7 +23,7 @@ export default function Button({
   children,
   ...otherProps
 }: ButtonProps) {
-  let defaultClass = "btn inline-flex align-middle";
+  let defaultClass = "btn inline-flex justify-center align-middle";
   // common to all colors
   switch (variant) {
     case "solid":
