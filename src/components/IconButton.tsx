@@ -8,11 +8,11 @@ interface ButtonIconProps
 }
 export default function IconButton({
   icon,
-  className = "",
+  className = "p-2 px-2 font-semibold rounded-md border border-transparent",
   ...otherProps
 }: ButtonIconProps) {
   return (
-    <Button className={`btn-icon ${className}`} {...otherProps}>
+    <Button className={className} {...otherProps}>
       {icon}
     </Button>
   );

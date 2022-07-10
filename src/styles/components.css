@@ -6,6 +6,22 @@
   .btn-icon {
     @apply px-2;
   }
+  /* labels as buttons */
+  .btn-label {
+    @apply inline-block p-1 px-4 font-semibold rounded-full cursor-pointer
+    border-2 border-gray-500;
+  }
+  .btn-label:not(.disabled) {
+    @apply hover:bg-primary-100 dark:hover:bg-primary-900/md;
+  }
+  input:checked + .btn-label {
+    @apply text-gray-100 dark:text-gray-950
+      border-primary-500 dark:border-primary-300
+      bg-primary-500 dark:bg-primary-300;
+  }
+  input:checked + .btn-label:not(.disabled) {
+    @apply hover:bg-primary-600 dark:hover:bg-primary-400;
+  }
 
   /* checkboxes and radios */
   .checkbox,

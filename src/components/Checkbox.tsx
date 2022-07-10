@@ -6,7 +6,10 @@ interface CheckboxProps {
 }
 
 export default function Checkbox({
-  className = "",
+  className = `bg-transparent rounded-sm
+    text-primary-500 dark:text-primary-300/high
+    focus:outline-primary-500 dark:focus:outline-primary-300/high
+    focus:ring-transparent focus:ring-offset-transparent`,
   disabled = false,
   onChange,
   ...otherProps

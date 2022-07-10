@@ -21,10 +21,11 @@ export default function Label({
     className: `px-2 py-1 rounded flex items-center transition-colors
       ${disabled ? "disabled" : "hover:bg-gray-200 dark:hover:bg-gray-800"}
       ${className}`,
+    htmlFor: id,
     ...otherProps,
   };
   return (
-    <label htmlFor={id} {...labelProps}>
+    <label {...labelProps}>
       {id || disabled
         ? React.cloneElement(input, { id: id, disabled: disabled })
         : input}

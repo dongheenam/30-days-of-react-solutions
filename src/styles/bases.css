@@ -3,14 +3,6 @@
   body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    @apply text-lg;
-  }
-  #app {
-    min-height: 100vh;
-  }
-  main {
-    width: min(95%, 800px);
-    @apply pb-16;
   }
   /* TYPOGRAPHY */
   h1 {

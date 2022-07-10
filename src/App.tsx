@@ -10,7 +10,10 @@ export default function App() {
 
   if (!loadDOM) return <div />;
   return (
-    <div id="app" className={`h-max lg:h-screen flex flex-col ${mode}`}>
+    <div
+      id="app"
+      className={`h-max min-h-screen lg:h-screen flex flex-col text-lg ${mode}`}
+    >
       <BrowserRouter>
         <TopNav mode={mode} toggleMode={toggleMode} />
         <div
@@ -19,7 +22,7 @@ export default function App() {
         >
           <SideNav />
           <main
-            className="overflow-y-hidden lg:overflow-y-scroll p-8 pb-24
+            className="w-[min(95%,800px)] overflow-y-hidden lg:overflow-y-scroll p-8 pb-24
             bg-gray-100 dark:bg-gray-900"
           >
             <RenderPages />

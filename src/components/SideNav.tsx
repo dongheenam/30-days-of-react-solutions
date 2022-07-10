@@ -13,7 +13,7 @@ function NavSubtitle({ children }: { children: string }) {
 
 function NavLink({ to, children }: { to: string; children: string }) {
   return (
-    <Link to={to} className="click-transparent">
+    <Link to={to} className="ia-opacity">
       {children}
     </Link>
   );
@@ -21,9 +21,9 @@ function NavLink({ to, children }: { to: string; children: string }) {
 
 export default function SideNav() {
   return (
-    <aside>
+    <aside className="w-[min(95%,800px)] lg:w-[18rem]">
       <nav
-        className="h-full flex flex-col gap-2 min-w-[18rem] p-8 lg:pt-12
+        className="h-full flex flex-col gap-2 p-8 lg:pt-12
           dark:border-t-2 dark:border-gray-600 dark:lg:border-none"
       >
         <NavLink to="/">Home</NavLink>

@@ -49,12 +49,7 @@ export default function Day6Task3() {
     <>
       <h2>World population</h2>
       <Box>
-        <div
-          className="grid gap-x-4 gap-y-1"
-          style={{
-            gridTemplateColumns: "auto 1fr auto",
-          }}
-        >
+        <div className="grid grid-cols-[auto,1fr,auto] gap-x-4 gap-y-1">
           {countries.map((country) =>
             renderChartElement(country, maxPopulation)
           )}

@@ -6,8 +6,11 @@ import { visualizer } from "rollup-plugin-visualizer";
 export default defineConfig({
   plugins: [react(), visualizer()],
   build: {
+    // minify: false,
     // rollupOptions: {
-    //   treeshake: true,
+    //   output: {
+    //     assetFileNames: "[name].[ext]",
+    //   },
     // },
   },
 });

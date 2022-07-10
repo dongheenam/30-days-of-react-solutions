@@ -16,7 +16,6 @@ export default function Home() {
       </p>
       <h2>Design elements</h2>
       <HomeButtons />
-
       <HomeCheckBoxes />
       <HomeRadios />
     </>
