@@ -1,13 +1,14 @@
 import useCheckboxes from "../../hooks/useCheckboxes";
 import CheckboxGroup, { Checkboxes } from "../../components/CheckboxGroup";
 import LabelButton from "../../components/LabelButton";
-import Checkbox from "../../components/Checkbox";
+import Button from "../../components/Button";
 
 export default function HomeCheckBoxes() {
   const useCB = useCheckboxes();
-  const [_checkedStatuses, checkedItems, _handleChange] = useCB;
+  const [_checkedStatuses, checkedItems, checkItems, _handleChange] = useCB;
   const useCB2 = useCheckboxes();
-  const [_checkedStatuses2, checkedItems2, _handleChange2] = useCB2;
+  const [_checkedStatuses2, checkedItems2, _checkItems2, _handleChange2] =
+    useCB2;
 
   const checkboxes: Checkboxes = {
     name: "cb-example",
@@ -33,7 +34,16 @@ export default function HomeCheckBoxes() {
       <h3>Checkboxes</h3>
       <div className="mb-4">
         <span>Checkbox values: {checkedItems.join(", ")}</span>
+
         <div className="border border-gray-500 rounded-md px-4 py-2 flex flex-col">
+          <Button
+            color="red"
+            variant="solid"
+            className="self-start"
+            onClick={() => checkItems([])}
+          >
+            Reset all
+          </Button>
           <CheckboxGroup checkboxes={checkboxes} useCheckboxes={useCB} />
         </div>
       </div>

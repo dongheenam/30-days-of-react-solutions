@@ -3,8 +3,14 @@ import { Value } from "../components/CheckboxGroup";
 
 type CheckedStatuses = { [value: Value]: boolean };
 type CheckedItems = Array<Value>;
-type HandleChange = (e: React.ChangeEvent<HTMLInputElement>) => void;
-export type UseCheckboxes = [CheckedStatuses, CheckedItems, HandleChange];
+type CheckItems = (items: Array<Value>) => void;
+type HandleChange = (event: React.ChangeEvent<HTMLInputElement>) => void;
+export type UseCheckboxes = [
+  CheckedStatuses,
+  CheckedItems,
+  CheckItems,
+  HandleChange
+];
 
 export default function useCheckboxes(): UseCheckboxes {
   const [checkedStatuses, setCheckedStatuses] = useState<CheckedStatuses>({});
@@ -19,5 +25,11 @@ export default function useCheckboxes(): UseCheckboxes {
     );
   }, [checkedStatuses]);
 
-  return [checkedStatuses, checkedItems, handleChange];
+  const checkItems: CheckItems = (newItems) => {
+    setCheckedStatuses(
+      Object.fromEntries(newItems.map((item) => [item, true]))
+    );
+  };
+
+  return [checkedStatuses, checkedItems, checkItems, handleChange];
 }

@@ -28,7 +28,8 @@ export default function CheckboxGroup({
   labelElement = Label,
   inputElement = Checkbox,
 }: CheckboxGroupProps) {
-  const [checkedStatuses, _checkedItems, handleChange] = useCheckboxes;
+  const [checkedStatuses, _checkedItems, _checkItems, handleChange] =
+    useCheckboxes;
 
   function createInput(item: Item) {
     const inputProps = {

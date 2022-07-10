@@ -1,12 +1,13 @@
+import Button from "../../components/Button";
 import LabelButton from "../../components/LabelButton";
 import RadioGroup, { Radios } from "../../components/RadioGroup";
 import useRadios from "../../hooks/useRadios";
 
 export default function HomeRadios() {
   const useR = useRadios();
-  const [selectedItem, _handleChange] = useR;
+  const [selectedItem, selectItem, _handleChange] = useR;
   const useR2 = useRadios();
-  const [selectedItem2, _handleChange2] = useR2;
+  const [selectedItem2, _selectItem2, _handleChange2] = useR2;
 
   const radios: Radios = {
     name: "radio-example",
@@ -33,6 +34,14 @@ export default function HomeRadios() {
       <div className="mb-4">
         <span>Radio value: {selectedItem}</span>
         <div className="border border-gray-500 rounded-md px-4 py-2 flex flex-col">
+          <Button
+            color="red"
+            variant="solid"
+            className="self-start"
+            onClick={() => selectItem(undefined)}
+          >
+            Reset
+          </Button>
           <RadioGroup radios={radios} useRadios={useR} />
         </div>
       </div>

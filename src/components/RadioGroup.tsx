@@ -28,7 +28,7 @@ export default function RadioGroup({
   labelElement = Label,
   inputElement = Radio,
 }: RadioGroupProps) {
-  const [selectedItem, handleChange] = useRadios;
+  const [selectedItem, _selectItem, handleChange] = useRadios;
 
   function createInput(item: Item) {
     const inputProps = {
